@@ -1,0 +1,16 @@
+---
+config:
+  git:
+    config:
+      "user.name": ""
+      "user.email": ""
+  mariadb:
+    root_password: ""
+  ubuntu:
+    target_release: "23.04" # Examples: "23.04", "22.04 LTS"
+  system:
+    username: "{{ lookup('env', 'USER') }}"
+  # Add as many virtualhosts as needed - if a virtualhost already exists, it will be skipped
+  # example.localhost is an example, you can remove it and add your own local domains
+  # virtualhosts:
+  #   - "example.localhost"

@@ -1,0 +1,10 @@
+---
+# vars file for system
+target_release_major: "{{ config['ubuntu']['target_release'] |
+  default('') |
+  ansible.builtin.regex_replace('\\..*$', '') }}"
+target_release_minor: "{{ config['ubuntu']['target_release'] |
+  default('') |
+  ansible.builtin.regex_replace('^.*\\.', '') |
+  ansible.builtin.regex_replace('\\s.*$', '') }}"
+target_release_lts: "{{ 'lts' in (config['ubuntu']['target_release'] | lower) }}"
