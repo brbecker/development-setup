@@ -6,7 +6,7 @@
   gather_facts: true
   tasks:
     - name: Identify operating system
-      set_fact: os="{{ ansible_distribution | lower }}{{ ansible_distribution_major_version }}"
+      set_fact: os="{{ ansible_distribution | lower }}" #{{ ansible_distribution_major_version }}"
     - name: Find supported Operating Systems (Step 1)
       find:
         paths: "{{ playbook_dir }}/os"
